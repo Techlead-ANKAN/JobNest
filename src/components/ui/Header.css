@@ -1,0 +1,253 @@
+/* Header Styles */
+.main-header {
+    background: white;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .header-content {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+  }
+  
+  .brand-container {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .logo-link {
+    transition: transform 0.3s ease;
+  }
+  
+  .logo-link:hover {
+    transform: scale(1.03);
+  }
+  
+  .header_logo {
+    height: 5rem;
+    width: auto;
+    object-fit: contain;
+  }
+  
+  .site-title {
+    margin: 0;
+    font-size: xx-large;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: #2d3436;
+  }
+  
+  .typing-animation {
+    display: inline-block;
+    overflow: hidden;
+    border-right: 2px solid #0984e3;
+    white-space: nowrap;
+    animation: 
+      typing 1.5s steps(15, end) forwards,
+      blink-caret 0.75s step-end infinite;
+    max-width: 0;
+  }
+  
+  @keyframes typing {
+    from { max-width: 0 }
+    to { max-width: 100% }
+  }
+  
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #0984e3; }
+  }
+  
+  .auth-section {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  /* Sign In Button */
+  .sign-in-button {
+    background: #0984e3;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.8rem;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 4px 15px rgba(9, 132, 227, 0.2);
+  }
+  
+  .sign-in-button:hover {
+    background: #0873c4;
+    box-shadow: 0 6px 20px rgba(9, 132, 227, 0.3);
+    transform: translateY(-1px);
+  }
+  
+  /* User Profile */
+  .user-profile {
+    height: 100px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .user-trigger {
+    width: 33px;
+    height: 33px;
+    border-radius: 50%;
+    border: 2px solid #0984e3;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .user-trigger:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(9, 132, 227, 0.2);
+  }
+  
+  /* Clerk Modal Overrides */
+  .user-popover {
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .header-content {
+      padding: 0 1.5rem;
+    }
+    
+    .logo {
+      height: 50px;
+    }
+  
+    .site-title {
+      font-size: 1.4rem;
+    }
+  
+    .typing-animation {
+      animation: none;
+      border-right: none;
+      max-width: 100%;
+    }
+  
+    .sign-in-button {
+      padding: 0.6rem 1.5rem;
+      font-size: 0.9rem;
+    }
+  
+    .user-trigger {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .header-content {
+      padding: 0 1rem;
+      height: 70px;
+    }
+  
+    .brand-container {
+      gap: 1rem;
+    }
+  
+    .logo {
+      height: 45px;
+    }
+  
+    .site-title {
+      font-size: 1.2rem;
+    }
+  
+    .typing-animation {
+      display: none;
+    }
+  }
+
+
+  /* Clerk Modal Styles */
+.cl-modalContent {
+  border-radius: 12px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+}
+
+.cl-modalBackdrop {
+  background: rgba(0, 0, 0, 0.5) !important;
+  backdrop-filter: blur(4px) !important;
+}
+
+.cl-card {
+  padding: 2rem !important;
+}
+
+.cl-headerTitle {
+  font-family: 'Poppins', sans-serif !important;
+  color: #2d3436 !important;
+}
+
+.cl-socialButtonsBlock {
+  gap: 0.8rem !important;
+}
+
+.cl-formButtonPrimary {
+  background: #0984e3 !important;
+  transition: all 0.3s ease !important;
+}
+
+.cl-formButtonPrimary:hover {
+  background: #0873c4 !important;
+  transform: translateY(-1px) !important;
+}
+
+
+/* User Avatar Container */
+.user-avatar-box {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* User Avatar Image */
+.user-avatar-image {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Trigger Button Container */
+.user-trigger {
+  width: 50px !important;
+  height: 50px !important;
+  border: 2px solid #0984e3 !important;
+  transition: all 0.3s ease;
+}
+
+/* Hover Effects */
+.user-trigger:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(9, 132, 227, 0.2);
+}
+
+@media (max-width: 768px) {
+  .user-trigger {
+    width: 45px !important;
+    height: 45px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .user-trigger {
+    width: 40px !important;
+    height: 40px !important;
+  }
+}
