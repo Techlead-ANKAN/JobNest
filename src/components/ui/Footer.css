@@ -1,0 +1,155 @@
+.main-footer {
+    background: #2d3436;
+    color: #ffffff;
+    padding: 2.5rem 1rem;
+    position: relative;
+    margin-top: auto;
+  }
+  
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .footer-section {
+    flex: 1;
+    min-width: 250px;
+  }
+  
+  .footer-heading {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: #0984e3;
+  }
+  
+  .developer-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .developer-name {
+    font-size: 1.1rem;
+    font-weight: 500;
+    opacity: 0.9;
+  }
+  
+  .social-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .social-icon {
+    font-size: 1.5rem;
+    color: #ffffff;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+  }
+  
+  .social-icon:hover {
+    opacity: 1;
+    color: #0984e3;
+    transform: translateY(-2px);
+  }
+  
+  .email-container {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.8rem 1.2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    max-width: fit-content;
+  }
+  
+  .email-container:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+  }
+  
+  .email-icon {
+    font-size: 1.2rem;
+    opacity: 0.8;
+  }
+  
+  .email-text {
+    font-size: 0.95rem;
+    font-family: 'Fira Code', monospace;
+    opacity: 0.9;
+  }
+  
+  .copy-notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #0984e3;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 15px rgba(9, 132, 227, 0.3);
+    animation: slideIn 0.3s ease-out;
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  .copyright {
+    text-align: center;
+    padding-top: 2rem;
+    font-size: 0.9rem;
+    opacity: 0.7;
+    margin-top: 1rem;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .footer-content {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .email-container {
+      margin: 0 auto;
+    }
+  
+    .social-links {
+      justify-content: center;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .footer-section {
+      min-width: 100%;
+    }
+  
+    .email-text {
+      font-size: 0.85rem;
+    }
+  
+    .copy-notification {
+      bottom: 10px;
+      right: 10px;
+      font-size: 0.8rem;
+      padding: 0.6rem 1rem;
+    }
+  }
