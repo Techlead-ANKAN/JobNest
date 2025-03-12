@@ -1,0 +1,36 @@
+{
+  "faq": [
+    {
+      "question": "How do I create an account?",
+      "answer": "Click on the 'Sign Up' button, fill in your details, and verify your email to create an account."
+    },
+    {
+      "question": "How do I search for jobs?",
+      "answer": "Use the search bar on the homepage to enter keywords, job titles, or locations to find relevant job listings."
+    },
+    {
+      "question": "Can I apply for jobs directly through the portal?",
+      "answer": "Yes, once you find a job listing, click on 'Apply Now' and follow the instructions to submit your application."
+    },
+    {
+      "question": "How do I upload my resume?",
+      "answer": "Go to your profile section and click on 'Upload Resume' to add your latest resume in PDF or DOC format."
+    },
+    {
+      "question": "Is my personal information secure?",
+      "answer": "Yes, we use advanced security measures to protect your personal data from unauthorized access."
+    },
+    {
+      "question": "Can employers contact me directly?",
+      "answer": "Yes, if your profile matches their job requirements, recruiters can reach out to you through the platform."
+    },
+    {
+      "question": "How do I track my job applications?",
+      "answer": "You can check the 'My Applications' section to see the status of your submitted job applications."
+    },
+    {
+      "question": "Are there any fees for job seekers?",
+      "answer": "No, creating an account and applying for jobs is completely free for job seekers."
+    }
+  ]
+}
