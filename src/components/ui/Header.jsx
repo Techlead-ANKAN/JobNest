@@ -44,6 +44,7 @@ import { Link } from 'react-router-dom';
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-react";
 import Logo from "../../../public/logo.png";
 import "./Header.css";
+import { BriefcaseIcon, Heart } from 'lucide-react';
 
 function Header() {
   return (
@@ -80,7 +81,12 @@ function Header() {
                     avatarImage: "user-avatar-image"
                   }
                 }}
-              />
+              >
+                <UserButton.MenuItems>
+                <UserButton.Link label="My Jobs" labelIcon={<BriefcaseIcon size={15} />} href='/myjobs' />
+                <UserButton.Link label="Saved Jobs" labelIcon={<Heart size={15} />} href='/savedjobs' />
+                </UserButton.MenuItems>
+              </UserButton>
             </div>
           </SignedIn>
         </div>
