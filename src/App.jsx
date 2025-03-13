@@ -19,6 +19,7 @@ import JobsListing from './pages/JobsListing'
 import PostJobs from './pages/PostJobs'
 import SavedJobs from './pages/SavedJobs'
 import MyJobs from './pages/MyJobs'
+import ProtectedRoute from './components/ui/ProtectedRoute'
 
 
 const router = createBrowserRouter([
@@ -31,27 +32,45 @@ const router = createBrowserRouter([
       },
       {
         path: "/onboarding",
-        element: <OnBoarding />
+        element: 
+        <ProtectedRoute>
+          <OnBoarding />
+        </ProtectedRoute>
       },
       {
         path: "/job",
-        element: <Job />
+        element: 
+        <ProtectedRoute>
+          <Job />
+        </ProtectedRoute>
       },
       {
         path: "/joblisting",
-        element: <JobsListing />
+        element: 
+        <ProtectedRoute>
+          <JobsListing />
+        </ProtectedRoute>
       },
       {
         path: "/postjobs",
-        element: <PostJobs />
+        element: 
+        <ProtectedRoute>
+          <PostJobs />
+        </ProtectedRoute>
       },
       {
         path: "/savedjobs",
-        element: <SavedJobs />
+        element: 
+        <ProtectedRoute>
+          <SavedJobs />
+        </ProtectedRoute>
       },
       {
         path: "/myjobs",
-        element: <MyJobs />
+        element: 
+        <ProtectedRoute>
+          <MyJobs />
+        </ProtectedRoute>
       }
     ]
   }
