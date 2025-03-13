@@ -316,3 +316,122 @@
       animation-duration: 25s;
     }
   }
+
+
+
+  /* Modal Styles */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(45, 52, 54, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .modal-content {
+    background: white;
+    border-radius: 10px;
+    padding: 2.5rem;
+    box-shadow: 0 10px 30px rgba(9, 132, 227, 0.2);
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+    animation: modalFadeIn 0.3s ease;
+  }
+  
+  @keyframes modalFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .modal-content h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #2d3436;
+  }
+  
+  .modal-content p {
+    font-size: 1.1rem;
+    color: #636e72;
+    margin-bottom: 2rem;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #636e72;
+    transition: all 0.2s ease;
+  }
+  
+  .close-btn:hover {
+    color: #0984e3;
+    transform: scale(1.1);
+  }
+  
+  .btn {
+    padding: 1rem 2.5rem;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    background: #0984e3;
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(9, 132, 227, 0.3);
+  }
+  
+  .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(9, 132, 227, 0.4);
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .modal-content {
+      padding: 2rem;
+    }
+    
+    .modal-content h2 {
+      font-size: 1.8rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .modal-content {
+      padding: 1.5rem;
+      width: 85%;
+    }
+    
+    .modal-content h2 {
+      font-size: 1.5rem;
+    }
+    
+    .modal-content p {
+      font-size: 1rem;
+    }
+    
+    .btn {
+      padding: 0.8rem 2rem;
+      font-size: 0.9rem;
+    }
+  }
