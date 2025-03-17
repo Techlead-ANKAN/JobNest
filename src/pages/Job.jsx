@@ -11,7 +11,7 @@ function Job() {
   const [expandedDescriptions, setExpandedDescriptions] = useState({});
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedType, setSelectedType] = useState("all");
-  const [selectedLocation, setSelectedLocation] = useState("all");
+  const [selectedLocation, setSelectedLocation] = useState("");
   const [selectedLocationType, setSelectedLocationType] = useState("all");
 
   useEffect(() => {
@@ -26,13 +26,13 @@ function Job() {
           query = query.ilike("Role", `%${searchTerm}%`);
         }
         if (selectedType !== "all") {
-          query = query.eq("job_type", selectedType);
+          query = query.eq("JobType", selectedType);
         }
-        if (selectedLocation !== "all") {
+        if (selectedLocation !== "") {
           query = query.ilike("Location", `%${selectedLocation}%`);
         }
         if (selectedLocationType !== "all") {
-          query = query.eq("location_type", selectedLocationType);
+          query = query.eq("LocationType", selectedLocationType);
         }
 
         const { data, error } = await query;
@@ -46,8 +46,8 @@ function Job() {
             Description: job.Description || "No description provided",
             Location: job.Location || "Location not specified",
             Role: job.Role || "Undefined Role",
-            job_type: job.job_type || "Full-time",
-            location_type: job.location_type || "Onsite",
+            JobType: job.JobType || "Full-Time",
+            LocationType: job.LocationType || "Onsite",
           }));
           setJobData(validatedData);
           setFetchError(null);
@@ -76,6 +76,8 @@ function Job() {
       return "Invalid date";
     }
   };
+
+  // console.log(selectedType);
 
   return (
     <div className="jobs-container">
@@ -111,8 +113,8 @@ function Job() {
                 className="filter-select"
               >
                 <option value="all">All Types</option>
-                <option value="Full-time">Full-time</option>
-                <option value="Part-time">Part-time</option>
+                <option value="Full-Time">Full-Time</option>
+                <option value="Part-Time">Part-Time</option>
                 <option value="Intern">Intern</option>
                 <option value="Contract">Contract</option>
               </select>
@@ -134,7 +136,7 @@ function Job() {
 
             <div className="filter-category">
               <span>Location:</span>
-              <select
+              {/* <select
                 value={selectedLocation}
                 onChange={(e) => setSelectedLocation(e.target.value)}
                 className="filter-select"
@@ -144,7 +146,14 @@ function Job() {
                 <option value="San Francisco">San Francisco</option>
                 <option value="London">London</option>
                 <option value="Berlin">Berlin</option>
-              </select>
+              </select> */}
+
+              <input type="text" 
+                value={selectedLocation}
+                onChange={(e) => setSelectedLocation(e.target.value)}
+                className="filter-select" 
+                placeholder="state, country"  
+              />
             </div>
           </div>
         </div>
@@ -171,14 +180,16 @@ function Job() {
                   <p className="job-date">{formatDate(job.created_at)}</p>
                 </div>
               </div>
-              <span className={`job-type ${job.job_type.replace(" ", "-")}`}>
-                {job.job_type}
-              </span>
             </div>
 
             <div className="job-card-body">
               <h2 className="job-title">{job.Role}</h2>
 
+              <div className="job-type-div">
+                <span className={`job-type ${job.JobType.replace(" ", "-")}`}>
+                  {job.JobType}
+                </span>
+              </div>
               <div className="job-meta-container">
                 <div className="job-meta">
                   <div className="meta-item">
@@ -192,7 +203,7 @@ function Job() {
                       <path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z" />
                       <path d="M13 7h-2v5.414l3.293 3.293 1.414-1.414L13 11.586z" />
                     </svg>
-                    <span>{job.location_type}</span>
+                    <span>{job.LocationType}</span>
                   </div>
                 </div>
               </div>
