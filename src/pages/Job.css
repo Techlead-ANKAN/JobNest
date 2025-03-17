@@ -33,6 +33,7 @@
 }
 
 .job-card {
+    position: relative;
     background: white;
     border-radius: 15px;
     padding: 1.5rem;
@@ -532,4 +533,17 @@
     .job-title-modal {
         font-size: 1.25rem;
     }
+}
+
+.save{
+    color: black;
+    position: absolute;
+    right: 25px;
+    top: 20px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.save:hover{
+    text-decoration: underline;
 }
