@@ -196,7 +196,9 @@ function Job() {
     }
   }, [showFavoritePopup]);
 
-
+  const saveFunction = () => {
+    console.log("Saved Job")
+  }
 
   return (
     <div className="jobs-container">
@@ -279,6 +281,9 @@ function Job() {
             className="job-card"
           >
             <div className="job-card-header">
+              <button className="save" onClick={saveFunction}>
+                SAVE
+              </button>
               <div className="company-badge">
                 <div className="company-initial">
                   {job.CompanyName?.[0]?.toUpperCase() || "?"}
