@@ -1,0 +1,270 @@
+/* PostJob.css */
+.post-job-container {
+    min-height: 100vh;
+    max-width: 1200px;
+    margin: 0rem auto;
+    padding: 0 2rem;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .min-h-screen{
+    background-color: #f8f9fa;
+  }
+  
+  .post-job-header {
+    margin-top: 2vh;
+    text-align: center;
+    margin-bottom: 4rem;
+    transform: translateY(20px);
+    animation: fadeSlideUp 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+  }
+  
+  .gradient-heading {
+    background: linear-gradient(135deg, #2d3436 0%, #0984e3 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+  }
+  
+  .subtitle {
+    color: #636e72;
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+  
+  .job-post-form {
+    background: #ffffff;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(9, 132, 227, 0.1);
+    transform: translateY(30px);
+    opacity: 0;
+    animation: formEntrance 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) 0.3s forwards;
+  }
+  
+  .form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+    color: #2d3436;
+    font-size: 0.95rem;
+    opacity: 0.9;
+  }
+  
+  input, select {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: #f8f9fa;
+    color: #282c3c;
+    font-weight: 700;
+  }
+  
+  input:focus, select:focus {
+    outline: none;
+    border-color: #0984e3;
+    background: white;
+    box-shadow: 0 4px 15px rgba(9, 132, 227, 0.15);
+  }
+  
+  select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230984e3'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1.2em;
+  }
+  
+  .editor-container {
+    margin: 3rem 0;
+  }
+  
+  .editor-container label {
+    display: block;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    color: #2d3436;
+  }
+  
+  .submit-button {
+    position: relative;
+    background: linear-gradient(135deg, #0984e3 0%, #2d3436 100%);
+    color: white;
+    padding: 1.2rem 3rem;
+    border: none;
+    border-radius: 15px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 2rem auto 0;
+    box-shadow: 0 6px 20px rgba(9, 132, 227, 0.25);
+  }
+  
+  .button-hover-effect {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+      transparent 0%, 
+      rgba(255, 255, 255, 0.2) 50%, 
+      transparent 100%
+    );
+    transition: 0.4s;
+  }
+  
+  .submit-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(9, 132, 227, 0.35);
+  }
+  
+  .submit-button:hover .button-hover-effect {
+    left: 100%;
+  }
+  
+  /* Animations */
+  @keyframes fadeSlideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes formEntrance {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-slide-left {
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: slideLeft 0.6s ease-out forwards;
+  }
+  
+  .animate-slide-right {
+    opacity: 0;
+    transform: translateX(20px);
+    animation: slideRight 0.6s ease-out forwards;
+  }
+  
+  @keyframes slideLeft {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes slideRight {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .animate-fade-in {
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out 0.4s forwards;
+  }
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .animate-pulse {
+    animation: pulse 2s infinite;
+  }
+   
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .post-job-container {
+      padding: 0 1.5rem;
+      margin: 2rem auto;
+    }
+  
+    .gradient-heading {
+      font-size: 2.2rem;
+    }
+  
+    .job-post-form {
+      padding: 2rem;
+    }
+  
+    .form-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  
+    .submit-button {
+      max-width: 100%;
+      padding: 1.2rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .post-job-container {
+      padding: 0 1rem;
+    }
+  
+    .gradient-heading {
+      font-size: 1.8rem;
+    }
+  
+    .job-post-form {
+      padding: 1.5rem;
+    }
+  
+    input, select {
+      padding: 0.9rem 1.2rem;
+    }
+  }
+  
+  /* Editor Customization */
+  .tox-tinymce {
+    border-radius: 12px !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .tox-tinymce:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(9, 132, 227, 0.15) !important;
+  }
