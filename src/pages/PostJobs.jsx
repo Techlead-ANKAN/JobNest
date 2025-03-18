@@ -26,44 +26,44 @@ function PostJobs() {
         <div className="form-grid">
           <div className="form-group animate-slide-left">
             <label htmlFor="companyName">Company Name</label>
-            <input 
-              type="text" 
-              id="companyName" 
-              required 
-              placeholder="Google" 
+            <input
+              type="text"
+              id="companyName"
+              required
+              placeholder="Google"
               className="hover-effect"
             />
           </div>
 
           <div className="form-group animate-slide-right">
             <label htmlFor="jobRole">Job Role</label>
-            <input 
-              type="text" 
-              id="jobRole" 
-              required 
-              placeholder="Software Engineer" 
+            <input
+              type="text"
+              id="jobRole"
+              required
+              placeholder="Software Engineer"
               className="hover-effect"
             />
           </div>
 
           <div className="form-group animate-slide-left">
             <label htmlFor="state">State</label>
-            <input 
-              type="text" 
-              id="state" 
-              required 
-              placeholder="California" 
+            <input
+              type="text"
+              id="state"
+              required
+              placeholder="California"
               className="hover-effect"
             />
           </div>
 
           <div className="form-group animate-slide-right">
             <label htmlFor="country">Country</label>
-            <input 
-              type="text" 
-              id="country" 
-              required 
-              placeholder="United States" 
+            <input
+              type="text"
+              id="country"
+              required
+              placeholder="United States"
               className="hover-effect"
             />
           </div>
@@ -94,21 +94,24 @@ function PostJobs() {
           <label>Job Description</label>
           <Editor
             apiKey='zu44s9lz8czbeutnpmf1j1grlk9muzyiozvy90w7uz7m8ga2'
-            onInit={(e, editor) => editorRef.current = editor}
             init={{
               plugins: [
-                'advcode link lists media table wordcount a11ychecker powerpaste advtable'
+                // Core editing features
+                'anchor', 'autolink', 'charmap', 'codesample', 'emoticons', 'image', 'link', 'lists', 'media', 'searchreplace', 'table', 'visualblocks', 'wordcount',
+                // Your account includes a free trial of TinyMCE premium features
+                // Try the most popular premium features until Apr 1, 2025:
+                'checklist', 'mediaembed', 'casechange', 'export', 'formatpainter', 'pageembed', 'a11ychecker', 'tinymcespellchecker', 'permanentpen', 'powerpaste', 'advtable', 'advcode', 'editimage', 'advtemplate', 'ai', 'mentions', 'tinycomments', 'tableofcontents', 'footnotes', 'mergetags', 'autocorrect', 'typography', 'inlinecss', 'markdown', 'importword', 'exportword', 'exportpdf'
               ],
-              toolbar: 'undo redo | blocks | bold italic | alignleft aligncenter alignright | bullist numlist | link table',
-              menubar: false,
-              content_style: 'body { font-family: "Inter", sans-serif; font-size: 15px; line-height: 1.6 }',
-              height: 400,
-              skin: 'oxide-dark',
-              icons: 'thin',
-              branding: false,
-              statusbar: false,
+              toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+              tinycomments_mode: 'embedded',
+              tinycomments_author: 'Author name',
+              mergetags_list: [
+                { value: 'First.Name', title: 'First Name' },
+                { value: 'Email', title: 'Email' },
+              ],
+              ai_request: (request, respondWith) => respondWith.string(() => Promise.reject('See docs to implement AI Assistant')),
             }}
-            className="editor-hover-effect"
+            initialValue="Welcome to TinyMCE!"
           />
         </div>
 
