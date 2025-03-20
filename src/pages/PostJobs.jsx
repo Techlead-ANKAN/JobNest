@@ -190,6 +190,8 @@ function PostJobs() {
             ref={editorRef}
             apiKey='zu44s9lz8czbeutnpmf1j1grlk9muzyiozvy90w7uz7m8ga2'
             init={{
+              selector: "textarea",
+              placeholder: "Enter job description...",
               plugins: [
                 'anchor', 'autolink', 'charmap', 'codesample', 'emoticons', 'image', 'link', 'lists', 'media', 'searchreplace', 'table', 'visualblocks', 'wordcount',
                 'checklist', 'mediaembed', 'casechange', 'export', 'formatpainter', 'pageembed', 'a11ychecker', 'tinymcespellchecker', 'permanentpen', 'powerpaste', 'advtable', 'advcode', 'editimage', 'advtemplate', 'ai', 'mentions', 'tinycomments', 'tableofcontents', 'footnotes', 'mergetags', 'autocorrect', 'typography', 'inlinecss', 'markdown', 'importword', 'exportword', 'exportpdf'
@@ -203,7 +205,7 @@ function PostJobs() {
               ],
               ai_request: (request, respondWith) => respondWith.string(() => Promise.reject('See docs to implement AI Assistant')),
             }}
-            initialValue="Enter job description..."
+            // initialValue="Enter job description..."
             onEditorChange={(content) => setDesc(content)}
           />
         </div>

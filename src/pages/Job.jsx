@@ -282,9 +282,7 @@ function Job() {
             className="job-card"
           >
             <div className="job-card-header">
-              {/* <button className="save" onClick={saveFunction}>
-                SAVE
-              </button> */}
+            
 
               <div className="company-badge">
                 <div className="company-initial">
