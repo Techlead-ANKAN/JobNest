@@ -23,7 +23,7 @@ function Job() {
           .order("created_at", { ascending: false });
 
         if (searchTerm) {
-          query = query.ilike("Role", `%${searchTerm}%`);
+          query = query.ilike("CompanyName", `%${searchTerm}%`);
         }
         if (selectedType !== "all") {
           query = query.eq("JobType", selectedType);
