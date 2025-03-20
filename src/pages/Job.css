@@ -535,7 +535,7 @@
     }
 }
 
-.save{
+.save {
     color: black;
     position: absolute;
     right: 25px;
@@ -544,6 +544,34 @@
     cursor: pointer;
 }
 
-.save:hover{
+.save:hover {
     text-decoration: underline;
 }
+
+
+
+
+
+
+
+.checkbox-container {
+    margin-left: auto;
+    padding-left: 1rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Adjust the bookmark size */
+  .bookmark {
+    background-color: transparent !important;
+    width: 35px !important;
+    height: 35px !important;
+  }
+  
+  .svgIcon path {
+    stroke: #0984e3 !important;
+  }
+  
+  #checkboxInput:checked ~ .svgIcon path {
+    fill: #0984e3 !important;
+  }

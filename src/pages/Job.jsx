@@ -4,6 +4,7 @@ import { supabase } from "@/utils/supabase";
 import "./Job.css";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import CheckBox from "@/components/ui/CheckBox";
 
 function Job() {
   const [fetchError, setFetchError] = useState(null);
@@ -281,9 +282,10 @@ function Job() {
             className="job-card"
           >
             <div className="job-card-header">
-              <button className="save" onClick={saveFunction}>
+              {/* <button className="save" onClick={saveFunction}>
                 SAVE
-              </button>
+              </button> */}
+
               <div className="company-badge">
                 <div className="company-initial">
                   {job.CompanyName?.[0]?.toUpperCase() || "?"}
@@ -291,6 +293,13 @@ function Job() {
                 <div>
                   <h3 className="company-name">{job.CompanyName}</h3>
                   <p className="job-date">{formatDate(job.created_at)}</p>
+                </div>
+                {/* checkbox */}
+                <div className="checkbox-container">
+                  <CheckBox
+                    checked={favorites[job.id] || false}
+                    onChange={() => handleFavoriteToggle(job.id)}
+                  />
                 </div>
               </div>
             </div>
