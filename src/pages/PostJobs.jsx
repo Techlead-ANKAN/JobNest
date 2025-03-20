@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import { Editor } from '@tinymce/tinymce-react';
 import './PostJobs.css';
 import _ from 'lodash';
+import { supabase } from '@/utils/supabase';
 
 function PostJobs() {
   const editorRef = useRef(null);
@@ -67,22 +68,47 @@ function PostJobs() {
 
   }, [companyName, role, state, country, employmentType, workMode, desc]);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
+
+    const stateFormatted = _.startCase(state.toLowerCase());
+    const countryFormatted = _.startCase(country.toLowerCase());
+    const loc = `${stateFormatted}, ${countryFormatted}`;
+    
     e.preventDefault();
-    console.log(jobData);
+    
+    const {data, error} = await supabase
+    .from("Posted_Jobs")
+    .insert([
+      {
+        CompanyName: companyName,
+        Location: loc,
+        Role: role,
+        JobType: employmentType,
+        LocationType: workMode,
+        Description: desc
+      }
+    ]);
+    
+    if (error){
+      console.log("Error: ", error.message);
+      alert("Failed to add Job" + error.message);
+    }
+    else{
+      setShowSuccessPopup(true);
+      console.log(jobData);
+    }
 
-    setShowSuccessPopup(true);
 
-    // Clear all input fields including the description
+    
     setCompanyName("");
     setRole("");
     setState("");
     setCountry("");
     setEmploymentType("");
     setWorkMode("");
-    setDesc("");  // ✅ Clear description
+    setDesc("");  
 
-    // Reset the TinyMCE editor content properly
+    
     if (editorRef.current && editorRef.current.editor) {
       editorRef.current.editor.setContent('');
     }
