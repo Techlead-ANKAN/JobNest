@@ -4,6 +4,7 @@ import './PostJobs.css';
 import _ from 'lodash';
 import { supabase } from '@/utils/supabase';
 
+
 function PostJobs() {
   const editorRef = useRef(null);
   const formRef = useRef(null);
@@ -16,15 +17,15 @@ function PostJobs() {
         <div className="success-popup-content" onClick={(e) => e.stopPropagation()}>
           <div className="success-animation">
             <svg className="checkmark" viewBox="0 0 52 52">
-              <circle className="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
-              <path className="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+              <circle className="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
+              <path className="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
             </svg>
           </div>
           <h2 className="success-title">Opportunity Posted! 🎉</h2>
           <p className="success-message">
             Your job posting is now live and visible to our community of talented professionals.
           </p>
-          <button 
+          <button
             onClick={onClose}
             className="success-close-btn"
           >
@@ -68,6 +69,54 @@ function PostJobs() {
 
   }, [companyName, role, state, country, employmentType, workMode, desc]);
 
+  // const handleSubmit = async (e) => {
+
+  //   const stateFormatted = _.startCase(state.toLowerCase());
+  //   const countryFormatted = _.startCase(country.toLowerCase());
+  //   const loc = `${stateFormatted}, ${countryFormatted}`;
+
+  //   e.preventDefault();
+
+  //   const { data, error } = await supabase
+  //     .from("Posted_Jobs")
+  //     .insert([
+  //       {
+  //         CompanyName: companyName,
+  //         Location: loc,
+  //         Role: role,
+  //         JobType: employmentType,
+  //         LocationType: workMode,
+  //         Description: desc
+  //       }
+  //     ]);
+
+  //   if (error) {
+  //     console.log("Error: ", error.message);
+  //     alert("Failed to add Job" + error.message);
+  //   }
+  //   else {
+  //     setShowSuccessPopup(true);
+  //     console.log(jobData);
+  //   }
+
+
+
+  //   setCompanyName("");
+  //   setRole("");
+  //   setState("");
+  //   setCountry("");
+  //   setEmploymentType("");
+  //   setWorkMode("");
+  //   setDesc("");
+
+
+  //   if (editorRef.current && editorRef.current.editor) {
+  //     editorRef.current.editor.setContent('');
+  //   }
+  // };
+
+
+
   const handleSubmit = async (e) => {
 
     const stateFormatted = _.startCase(state.toLowerCase());
@@ -75,6 +124,11 @@ function PostJobs() {
     const loc = `${stateFormatted}, ${countryFormatted}`;
     
     e.preventDefault();
+    
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(desc, 'text/html');
+    const textContent = doc.body.textContent;
+    setDesc(textContent); // store the text in the desc variable
     
     const {data, error} = await supabase
     .from("Posted_Jobs")
@@ -85,7 +139,7 @@ function PostJobs() {
         Role: role,
         JobType: employmentType,
         LocationType: workMode,
-        Description: desc
+        Description: textContent
       }
     ]);
     
@@ -95,10 +149,11 @@ function PostJobs() {
     }
     else{
       setShowSuccessPopup(true);
+      console.log(textContent); // logs the description without HTML tags
       console.log(jobData);
     }
-
-
+  
+  
     
     setCompanyName("");
     setRole("");
@@ -106,14 +161,13 @@ function PostJobs() {
     setCountry("");
     setEmploymentType("");
     setWorkMode("");
-    setDesc("");  
-
+    // setDesc(""); // do not reset desc here, it will be reset when the editor content is cleared
+  
     
     if (editorRef.current && editorRef.current.editor) {
       editorRef.current.editor.setContent('');
     }
   };
-
 
   return (
     <div className="post-job-container">
