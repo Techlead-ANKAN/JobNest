@@ -14,9 +14,10 @@
         "path": "/companies/google.webp",
         "id": 3
     },
+
     {
         "name" : "ibm",
-        "path": "/companies/ibm.svg",
+        "path": "/companies/ibm.png",
         "id": 4
     },
     {
@@ -36,7 +37,7 @@
     },
     {
         "name" : "uber",
-        "path": "/companies/uber.svg",
+        "path": "/companies/uber.png",
         "id": 8
     },
     {
