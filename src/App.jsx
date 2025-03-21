@@ -22,6 +22,9 @@ import MyJobs from './pages/MyJobs'
 import ProtectedRoute from './components/ui/ProtectedRoute'
 
 
+
+
+
 const router = createBrowserRouter([
   {
     element: <AppLayout />,
@@ -77,6 +80,7 @@ const router = createBrowserRouter([
 ])
 
 function App() {
+
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <RouterProvider router={router} />

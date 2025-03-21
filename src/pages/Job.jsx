@@ -4,7 +4,7 @@ import { supabase } from "@/utils/supabase";
 import "./Job.css";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import CheckBox from "@/components/ui/CheckBox";
+import SaveJobBtn from "@/components/ui/SaveJobBtn";
 
 function Job() {
   const [fetchError, setFetchError] = useState(null);
@@ -182,24 +182,9 @@ function Job() {
     </motion.div>
   );
 
-  const [favorites, setFavorites] = useState({});
-  const [showFavoritePopup, setShowFavoritePopup] = useState(false);
+  
 
-  const handleFavoriteToggle = (jobId) => {
-    setFavorites(prev => ({ ...prev, [jobId]: !prev[jobId] }));
-    setShowFavoritePopup(true);
-  };
 
-  useEffect(() => {
-    if (showFavoritePopup) {
-      const timer = setTimeout(() => setShowFavoritePopup(false), 3000);
-      return () => clearTimeout(timer);
-    }
-  }, [showFavoritePopup]);
-
-  const saveFunction = () => {
-    console.log("Saved Job")
-  }
 
   return (
     <div className="jobs-container">
@@ -293,12 +278,7 @@ function Job() {
                   <p className="job-date">{formatDate(job.created_at)}</p>
                 </div>
                 {/* checkbox */}
-                <div className="checkbox-container">
-                  <CheckBox
-                    checked={favorites[job.id] || false}
-                    onChange={() => handleFavoriteToggle(job.id)}
-                  />
-                </div>
+                <SaveJobBtn job={job}/>
               </div>
             </div>
 
@@ -380,20 +360,6 @@ function Job() {
 
       {selectedJob && <JobDetailsModal job={selectedJob} onClose={closeModal} />}
 
-      {/* Favorite Popup */}
-      {showFavoritePopup && (
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          className="favorite-popup"
-        >
-          <svg viewBox="0 0 24 24" className="popup-icon">
-            <path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-          </svg>
-          <span>Job marked as favorite</span>
-        </motion.div>
-      )}
     </div>
   );
 }

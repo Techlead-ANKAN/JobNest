@@ -240,10 +240,10 @@ function PostJobs() {
               onChange={(e) => setEmploymentType(e.target.value)}
             >
               <option value="">Select type</option>
-              <option value="full-time">Full-Time</option>
-              <option value="part-time">Part-Time</option>
-              <option value="contract">Contract</option>
-              <option value="internship">Intern</option>
+              <option value="Full-Time">Full-Time</option>
+              <option value="Part-Time">Part-Time</option>
+              <option value="Contract">Contract</option>
+              <option value="Intern">Intern</option>
             </select>
           </div>
 
@@ -257,9 +257,9 @@ function PostJobs() {
               onChange={(e) => setWorkMode(e.target.value)}
             >
               <option value="">Select mode</option>
-              <option value="remote">Remote</option>
-              <option value="hybrid">Hybrid</option>
-              <option value="onsite">Onsite</option>
+              <option value="Remote">Remote</option>
+              <option value="Hybrid">Hybrid</option>
+              <option value="Onsite">Onsite</option>
             </select>
           </div>
         </div>
