@@ -536,16 +536,25 @@
 }
 
 .save {
-    color: black;
+    width: 70px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2d3436;
+    color: white;
     position: absolute;
     right: 25px;
     top: 20px;
     font-weight: 800;
     cursor: pointer;
+    border-radius: 1rem;
 }
 
 .save:hover {
-    text-decoration: underline;
+    background-color: white;
+    color: #2d3436;
+    transform: scale(1.2);
 }
 
 
@@ -553,25 +562,3 @@
 
 
 
-
-.checkbox-container {
-    margin-left: auto;
-    padding-left: 1rem;
-    display: flex;
-    align-items: center;
-  }
-  
-  /* Adjust the bookmark size */
-  .bookmark {
-    background-color: transparent !important;
-    width: 35px !important;
-    height: 35px !important;
-  }
-  
-  .svgIcon path {
-    stroke: #0984e3 !important;
-  }
-  
-  #checkboxInput:checked ~ .svgIcon path {
-    fill: #0984e3 !important;
-  }
