@@ -269,7 +269,7 @@
 .marquee-content {
   display: flex;
   align-items: center;
-  animation: marquee 40s linear infinite;
+  animation: marquee 100s linear infinite;
   width: fit-content;
 }
 

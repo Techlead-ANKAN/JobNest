@@ -1,103 +1,64 @@
 [
-    {
-        "name" : "amazon",
-        "path": "/companies/amazon.svg",
-        "id": 1
-    },
-    {
-        "name" : "atlassian",
-        "path": "/companies/atlassian.svg",
-        "id": 2
-    },
-    {
-        "name" : "google",
-        "path": "/companies/google.webp",
-        "id": 3
-    },
+    {"name": "amazon", "path": "/companies/amazon.svg", "id": 1},
+    {"name": "atlassian", "path": "/companies/atlassian.svg", "id": 2},
+    {"name": "google", "path": "/companies/google.webp", "id": 3},
+    {"name": "ibm", "path": "/companies/ibm.png", "id": 4},
+    {"name": "meta", "path": "/companies/meta.svg", "id": 5},
+    {"name": "microsoft", "path": "/companies/microsoft.webp", "id": 6},
+    {"name": "netflix", "path": "/companies/netflix.png", "id": 7},
+    {"name": "uber", "path": "/companies/uber.png", "id": 8},
+    {"name": "accenture", "path": "/companies/accenture.png", "id": 9},
+    {"name": "apple", "path": "/companies/apple.png", "id": 10},
+    {"name": "hp", "path": "/companies/hp.png", "id": 11},
+    {"name": "intel", "path": "/companies/intel.webp", "id": 12},
+    {"name": "jpmorgan", "path": "/companies/jpmorgan.png", "id": 13},
+    {"name": "mindtree", "path": "/companies/mindtree.webp", "id": 14},
+    {"name": "nasa", "path": "/companies/nasa.webp", "id": 15},
+    {"name": "nvidia", "path": "/companies/nvidia.png", "id": 16},
+    {"name": "rakuten", "path": "/companies/rakuten.png", "id": 17},
+    {"name": "salesforce", "path": "/companies/salesforce.png", "id": 18},
+    {"name": "samsung", "path": "/companies/samsung.png", "id": 19},
+    {"name": "tcs", "path": "/companies/tcs.webp", "id": 20},
+    
+    {"name": "amazon", "path": "/companies/amazon.svg", "id": 21},
+    {"name": "atlassian", "path": "/companies/atlassian.svg", "id": 22},
+    {"name": "google", "path": "/companies/google.webp", "id": 23},
+    {"name": "ibm", "path": "/companies/ibm.png", "id": 24},
+    {"name": "meta", "path": "/companies/meta.svg", "id": 25},
+    {"name": "microsoft", "path": "/companies/microsoft.webp", "id": 26},
+    {"name": "netflix", "path": "/companies/netflix.png", "id": 27},
+    {"name": "uber", "path": "/companies/uber.png", "id": 28},
+    {"name": "accenture", "path": "/companies/accenture.png", "id": 29},
+    {"name": "apple", "path": "/companies/apple.png", "id": 30},
+    {"name": "hp", "path": "/companies/hp.png", "id": 31},
+    {"name": "intel", "path": "/companies/intel.webp", "id": 32},
+    {"name": "jpmorgan", "path": "/companies/jpmorgan.png", "id": 33},
+    {"name": "mindtree", "path": "/companies/mindtree.webp", "id": 34},
+    {"name": "nasa", "path": "/companies/nasa.webp", "id": 35},
+    {"name": "nvidia", "path": "/companies/nvidia.png", "id": 36},
+    {"name": "rakuten", "path": "/companies/rakuten.png", "id": 37},
+    {"name": "salesforce", "path": "/companies/salesforce.png", "id": 38},
+    {"name": "samsung", "path": "/companies/samsung.png", "id": 39},
+    {"name": "tcs", "path": "/companies/tcs.webp", "id": 40},
 
-    {
-        "name" : "ibm",
-        "path": "/companies/ibm.png",
-        "id": 4
-    },
-    {
-        "name" : "meta",
-        "path": "/companies/meta.svg",
-        "id": 5
-    },
-    {
-        "name" : "microsoft",
-        "path": "/companies/microsoft.webp",
-        "id": 6
-    },
-    {
-        "name" : "netflix",
-        "path": "/companies/netflix.png",
-        "id": 7
-    },
-    {
-        "name" : "uber",
-        "path": "/companies/uber.png",
-        "id": 8
-    },
-    {
-        "name" : "accenture",
-        "path": "/companies/accenture.png",
-        "id": 9
-    },
-    {
-        "name" : "apple",
-        "path": "/companies/apple.png",
-        "id": 10
-    },
-    {
-        "name" : "hp",
-        "path": "/companies/hp.png",
-        "id": 11
-    },
-    {
-        "name" : "intel",
-        "path": "/companies/intel.webp",
-        "id": 12
-    },
-    {
-        "name" : "jpmorgan",
-        "path": "/companies/jpmorgan.png",
-        "id": 13
-    },
-    {
-        "name" : "mindtree",
-        "path": "/companies/mindtree.webp",
-        "id": 14
-    },
-    {
-        "name" : "nasa",
-        "path": "/companies/nasa.webp",
-        "id": 15
-    },
-    {
-        "name" : "nvidia",
-        "path": "/companies/nvidia.png",
-        "id": 16
-    },
-    {
-        "name" : "rakuten",
-        "path": "/companies/rakuten.png",
-        "id": 17
-    },
-    {
-        "name" : "salesforce",
-        "path": "/companies/salesforce.png",
-        "id": 18
-    },
-    {
-        "name" : "samsung",
-        "path": "/companies/samsung.png",
-        "id": 19
-    },
-    {
-        "name" : "tcs",
-        "path": "/companies/tcs.webp",
-        "id": 20
-    }
+    {"name": "amazon", "path": "/companies/amazon.svg", "id": 41},
+    {"name": "atlassian", "path": "/companies/atlassian.svg", "id": 42},
+    {"name": "google", "path": "/companies/google.webp", "id": 43},
+    {"name": "ibm", "path": "/companies/ibm.png", "id": 44},
+    {"name": "meta", "path": "/companies/meta.svg", "id": 45},
+    {"name": "microsoft", "path": "/companies/microsoft.webp", "id": 46},
+    {"name": "netflix", "path": "/companies/netflix.png", "id": 47},
+    {"name": "uber", "path": "/companies/uber.png", "id": 48},
+    {"name": "accenture", "path": "/companies/accenture.png", "id": 49},
+    {"name": "apple", "path": "/companies/apple.png", "id": 50},
+    {"name": "hp", "path": "/companies/hp.png", "id": 51},
+    {"name": "intel", "path": "/companies/intel.webp", "id": 52},
+    {"name": "jpmorgan", "path": "/companies/jpmorgan.png", "id": 53},
+    {"name": "mindtree", "path": "/companies/mindtree.webp", "id": 54},
+    {"name": "nasa", "path": "/companies/nasa.webp", "id": 55},
+    {"name": "nvidia", "path": "/companies/nvidia.png", "id": 56},
+    {"name": "rakuten", "path": "/companies/rakuten.png", "id": 57},
+    {"name": "salesforce", "path": "/companies/salesforce.png", "id": 58},
+    {"name": "samsung", "path": "/companies/samsung.png", "id": 59},
+    {"name": "tcs", "path": "/companies/tcs.webp", "id": 60}
 ]
