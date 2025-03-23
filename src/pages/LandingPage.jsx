@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Logo from "../../public/logo.png";
+import Logo from "../../public/logo1.png";
 import companiesData from "../data/companiesData.json";
 import faqData from "../data/faq.json";
 import "./LandingPage.css";

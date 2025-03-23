@@ -42,7 +42,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-react";
-import Logo from "../../../public/logo.png";
+import Logo from "../../../public/logo1.png";
 import "./Header.css";
 import { BriefcaseIcon, Heart } from 'lucide-react';
 
