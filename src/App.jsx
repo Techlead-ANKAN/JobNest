@@ -9,7 +9,7 @@ import './App.css'
 import { ThemeProvider } from "./components/ui/ThemeProvider"
 
 // Layout
-import AppLayout from './layouts/Applayout'
+import AppLayout from './layouts/AppLayout'
 
 // Pages
 import LandingPage from './pages/LandingPage'
