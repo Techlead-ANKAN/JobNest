@@ -15,6 +15,18 @@ function Job() {
   const [selectedLocation, setSelectedLocation] = useState("");
   const [selectedLocationType, setSelectedLocationType] = useState("all");
 
+  const [userId, setUserId] = useState(null);
+
+  useEffect(() => {
+    const getCurrentUser = async () => {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (user) {
+        setUserId(user.id);
+      }
+    };
+    getCurrentUser();
+  }, []);
+
   useEffect(() => {
     const fetchJobData = async () => {
       try {
@@ -175,14 +187,14 @@ function Job() {
 
         <div className="modal-footer">
           <Link to={`/apply/${job.id}`} className="primary-button">
-            Apply Now
+            Apply
           </Link>
         </div>
       </motion.div>
     </motion.div>
   );
 
-  
+
 
 
 
@@ -267,7 +279,7 @@ function Job() {
             className="job-card"
           >
             <div className="job-card-header">
-            
+
 
               <div className="company-badge">
                 <div className="company-initial">
@@ -278,7 +290,7 @@ function Job() {
                   <p className="job-date">{formatDate(job.created_at)}</p>
                 </div>
                 {/* checkbox */}
-                <SaveJobBtn job={job}/>
+                <SaveJobBtn job={job} />
               </div>
             </div>
 
