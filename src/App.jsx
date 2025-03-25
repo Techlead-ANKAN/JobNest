@@ -13,9 +13,7 @@ import AppLayout from './layouts/AppLayout'
 
 // Pages
 import LandingPage from './pages/LandingPage'
-import OnBoarding from './pages/OnBoarding'
 import Job from './pages/Job'
-import JobsListing from './pages/JobsListing'
 import PostJobs from './pages/PostJobs'
 import SavedJobs from './pages/SavedJobs'
 import MyJobs from './pages/MyJobs'
@@ -35,24 +33,10 @@ const router = createBrowserRouter([
         element: <LandingPage />
       },
       {
-        path: "/onboarding",
-        element: 
-        <ProtectedRoute>
-          <OnBoarding />
-        </ProtectedRoute>
-      },
-      {
         path: "/job",
         element: 
         <ProtectedRoute>
           <Job />
-        </ProtectedRoute>
-      },
-      {
-        path: "/joblisting",
-        element: 
-        <ProtectedRoute>
-          <JobsListing />
         </ProtectedRoute>
       },
       {
