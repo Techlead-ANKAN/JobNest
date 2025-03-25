@@ -186,6 +186,7 @@
 }
 
 .empty-state {
+    color: #2d3436;
     text-align: center;
     padding: 4rem;
     animation: bounceIn 0.8s ease;

@@ -147,6 +147,7 @@ function SavedJobs() {
         .select(`JobId, Posted_Jobs(id, Location, Role, Description, CompanyName, JobType, LocationType)`)
         .eq(`UserId`, user.id);
 
+
       if (error) {
         console.error("Error fetching saved job details: ", error);
         return;
@@ -181,77 +182,78 @@ function SavedJobs() {
 
   return (
     <div className="saved-jobs-container">
-      <div className="saved-header">
-        <h1 className="gradient-text">Saved Positions</h1>
-        <p className="user-greeting">Welcome back, {user?.fullName}</p>
-        <p className="section-subtitle">Your curated list of opportunities</p>
-      </div>
 
-      {savedJobs.length === 0 ? (
-        <div className="empty-state">
-          <RemoveIcon className="empty-state-icon" />
-          <h3>No Saved Positions Found</h3>
-          <p>Start saving jobs that interest you!</p>
+      {SavedJobs.length === 0 ? (
+        <div className="saved-header">
+          <p className="gradient-text">Welcome back, {user?.fullName}</p>
+          <p className="section-subtitle">No saved jobs!!!</p>
         </div>
       ) : (
-        <div className="saved-jobs-grid">
-          {savedJobs.map((job) => (
-            <div key={job.id} className="saved-job-card">
-              <button
-                className="remove-btn"
-                onClick={() => handleRemoveJob(job.id)}
-              >
-                <FaTrashAlt className="btn-icon" />
-              </button>
-              <div className="saved-job-content">
-                <div className="saved-company-header">
-                  <div className="saved-company-initial">
-                    {job.CompanyName[0]}
-                  </div>
-                  <div>
-                    <h3 className="company-name">{job.CompanyName}</h3>
-                    {/* <p className="job-date">Saved on {new Date().toLocaleDateString()}</p> */}
-                  </div>
-                </div>
-                <h2 className="saved-job-title">{job.Role}</h2>
-                <div className="saved-job-meta">
-                  <div className="saved-meta-item">
-                    <svg className="saved-meta-icon" viewBox="0 0 24 24">
-                      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
-                    </svg>
-                    <div>
-                      <span className="meta-label">Location</span>
-                      <span className="meta-value">{job.Location}</span>
-                    </div>
-                  </div>
-                  <div className="saved-meta-item">
-                    <svg className="saved-meta-icon" viewBox="0 0 24 24">
-                      <path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z" />
-                    </svg>
-                    <div>
-                      <span className="meta-label">Type</span>
-                      <span className="meta-value">{job.JobType}</span>
-                    </div>
-                  </div>
-                </div>
-                <p className="saved-job-description">{job.Description}</p>
-
-                <button
-                  className="secondary-button"
-                  onClick={() => {
-                    setSelectedJob(job);
-                  }}
-                >
-                  <svg viewBox="0 0 24 24" className="btn-icon">
-                    <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" />
-                  </svg>
-                  View Details
-                </button>
-              </div>
-            </div>
-          ))}
+        <div className="saved-header">
+          <h1 className="gradient-text">Saved Positions</h1>
+          <p className="user-greeting">Welcome back, {user?.fullName}</p>
+          <p className="section-subtitle">Your curated list of opportunities</p>
         </div>
       )}
+
+      <div className="saved-jobs-grid">
+        {savedJobs.map((job) => (
+          <div key={job.id} className="saved-job-card">
+            <button
+              className="remove-btn"
+              onClick={() => handleRemoveJob(job.id)}
+            >
+              <FaTrashAlt className="btn-icon" />
+            </button>
+            <div className="saved-job-content">
+              <div className="saved-company-header">
+                <div className="saved-company-initial">
+                  {job.CompanyName[0]}
+                </div>
+                <div>
+                  <h3 className="company-name">{job.CompanyName}</h3>
+                  {/* <p className="job-date">Saved on {new Date().toLocaleDateString()}</p> */}
+                </div>
+              </div>
+              <h2 className="saved-job-title">{job.Role}</h2>
+              <div className="saved-job-meta">
+                <div className="saved-meta-item">
+                  <svg className="saved-meta-icon" viewBox="0 0 24 24">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                  </svg>
+                  <div>
+                    <span className="meta-label">Location</span>
+                    <span className="meta-value">{job.Location}</span>
+                  </div>
+                </div>
+                <div className="saved-meta-item">
+                  <svg className="saved-meta-icon" viewBox="0 0 24 24">
+                    <path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z" />
+                  </svg>
+                  <div>
+                    <span className="meta-label">Type</span>
+                    <span className="meta-value">{job.JobType}</span>
+                  </div>
+                </div>
+              </div>
+              <p className="saved-job-description">{job.Description}</p>
+
+              <button
+                className="secondary-button"
+                onClick={() => {
+                  setSelectedJob(job);
+                }}
+              >
+                <svg viewBox="0 0 24 24" className="btn-icon">
+                  <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" />
+                </svg>
+                View Details
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+
 
       {selectedJob && (
         <JobDetailsModal job={selectedJob} onClose={closeModal} />
