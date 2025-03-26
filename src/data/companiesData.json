@@ -59,6 +59,5 @@
     {"name": "nvidia", "path": "/companies/nvidia.png", "id": 56},
     {"name": "rakuten", "path": "/companies/rakuten.png", "id": 57},
     {"name": "salesforce", "path": "/companies/salesforce.png", "id": 58},
-    {"name": "samsung", "path": "/companies/samsung.png", "id": 59},
-    {"name": "tcs", "path": "/companies/tcs.png", "id": 60}
+    {"name": "samsung", "path": "/companies/samsung.png", "id": 59}
 ]
