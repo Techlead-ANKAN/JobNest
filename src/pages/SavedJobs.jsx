@@ -9,15 +9,20 @@ import { FaTrashAlt } from 'react-icons/fa';
 
 function SavedJobs() {
 
+  const formatDate = (dateString) => {
+    try {
+      // Sanitize the date string
+      const [datePart, timePart] = dateString.split(' ');
+      const timeComponents = timePart.split(':');
+      const milliseconds = timeComponents[3] ? timeComponents[3].substring(0, 3) : '000';
+      const isoDateString = `${datePart}T${timeComponents[0]}:${timeComponents[1]}:${timeComponents[2]}.${milliseconds}Z`;
 
-  // const formatDate = (dateString) => {
-  //   try {
-  //     const options = { year: "numeric", month: "long", day: "numeric" };
-  //     return new Date(dateString).toLocaleDateString(undefined, options);
-  //   } catch {
-  //     return "Invalid date";
-  //   }
-  // };
+      const options = { year: "numeric", month: "long", day: "numeric" };
+      return new Date(isoDateString).toLocaleDateString(undefined, options);
+    } catch (e) {
+      return "Invalid date";
+    }
+  };
 
 
   const [selectedJob, setSelectedJob] = useState(null);
@@ -65,7 +70,7 @@ function SavedJobs() {
             </div>
             <div>
               <h2>{job.CompanyName}</h2>
-              <p className="job-date">{formatDate(job.created_at)}</p>
+              <p className="job-date">Posted on {(job.created_at).substring(0, 10)}</p>
             </div>
           </div>
           <h1 className="job-title-modal">{job.Role}</h1>
@@ -144,7 +149,7 @@ function SavedJobs() {
 
       const { data, error } = await supabase
         .from("Saved_Jobs")
-        .select(`JobId, Posted_Jobs(id, Location, Role, Description, CompanyName, JobType, LocationType)`)
+        .select(`JobId, Posted_Jobs(id, Location, Role, Description, created_at, CompanyName, JobType, LocationType)`)
         .eq(`UserId`, user.id);
 
 
@@ -153,6 +158,7 @@ function SavedJobs() {
         return;
       }
 
+      console.log(data)
       setSavedJobs(data.map(item => item.Posted_Jobs));
       setLoading(false);
     };
