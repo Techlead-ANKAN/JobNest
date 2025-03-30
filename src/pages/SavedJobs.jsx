@@ -9,20 +9,20 @@ import { FaTrashAlt } from 'react-icons/fa';
 
 function SavedJobs() {
 
-  const formatDate = (dateString) => {
-    try {
-      // Sanitize the date string
-      const [datePart, timePart] = dateString.split(' ');
-      const timeComponents = timePart.split(':');
-      const milliseconds = timeComponents[3] ? timeComponents[3].substring(0, 3) : '000';
-      const isoDateString = `${datePart}T${timeComponents[0]}:${timeComponents[1]}:${timeComponents[2]}.${milliseconds}Z`;
+  // const formatDate = (dateString) => {
+  //   try {
+  //     // Sanitize the date string
+  //     const [datePart, timePart] = dateString.split(' ');
+  //     const timeComponents = timePart.split(':');
+  //     const milliseconds = timeComponents[3] ? timeComponents[3].substring(0, 3) : '000';
+  //     const isoDateString = `${datePart}T${timeComponents[0]}:${timeComponents[1]}:${timeComponents[2]}.${milliseconds}Z`;
 
-      const options = { year: "numeric", month: "long", day: "numeric" };
-      return new Date(isoDateString).toLocaleDateString(undefined, options);
-    } catch (e) {
-      return "Invalid date";
-    }
-  };
+  //     const options = { year: "numeric", month: "long", day: "numeric" };
+  //     return new Date(isoDateString).toLocaleDateString(undefined, options);
+  //   } catch (e) {
+  //     return "Invalid date";
+  //   }
+  // };
 
 
   const [selectedJob, setSelectedJob] = useState(null);

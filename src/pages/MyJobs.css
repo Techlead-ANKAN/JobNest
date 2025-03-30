@@ -1,0 +1,62 @@
+.my-jobs-container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.my-jobs-heading {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    color: #1a365d;
+}
+
+.jobs-list {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.job-card {
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.job-role {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #2d3748;
+}
+
+.company-name {
+    color: #4a5568;
+    margin-bottom: 0.5rem;
+}
+
+.job-details {
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    color: #718096;
+}
+
+.job-details p {
+    margin: 0.25rem 0;
+}
+
+.no-jobs-message {
+    color: #718096;
+    font-style: italic;
+}
+
+.loading-message,
+.error-message {
+    padding: 2rem;
+    text-align: center;
+    font-size: 1.125rem;
+}
+
+.error-message {
+    color: #e53e3e;
+}
