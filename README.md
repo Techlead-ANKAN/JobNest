@@ -1,92 +1,87 @@
-# JobNest • Modern Hiring Platform
-
-![JobNest Logo](https://via.placeholder.com/150x50.png?text=JobNest+Logo)  
-*(Replace with actual logo URL)*  
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-black.svg)](https://opensource.org/licenses/MIT)  
-![React](https://img.shields.io/badge/React-20232A?logo=react)  
-![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?logo=supabase)  
-![Clerk](https://img.shields.io/badge/Clerk-000000?logo=clerk)  
-
-A modern job portal connecting talent with opportunity. Built for speed and reliability.
-
 ---
 
-## ✨ Key Features
+# JobNest: Modern Hiring Platform
 
-- **Secure Authentication** – Enterprise-grade auth with Clerk  
-- **Real-time Job Listings** – Powered by Supabase PostgreSQL  
-- **Advanced Search** – Filter by location, salary, and job type  
-- **Employer Dashboard** – Manage postings and applications  
-- **Mobile-first Design** – Optimized for all devices  
+![image](https://github.com/user-attachments/assets/d6ed6aa1-2b5f-4994-8ec5-b4821673c95f)
 
----
 
-## 🛠 Technology Stack
 
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=react,vite,tailwind,supabase,postgres" alt="Tech Stack" width="500">
-</p>
+JobNest is a modern hiring platform designed to streamline the job search and recruitment process. It offers a seamless experience for both job seekers and employers, leveraging cutting-edge technologies to provide real-time job listings, advanced search capabilities, and personalized job management.
 
----
+## Features
 
-## 🚀 Getting Started
+- **Secure Authentication**: Enterprise-grade authentication powered by Clerk.
+- **Real-time Job Listings**: Stay updated with the latest job openings powered by Supabase PostgreSQL.
+- **Advanced Search**: Filter job listings by location, salary, job type, and more.
+- **Employer Dashboard**: Manage job postings and track applications with ease.
+- **Mobile-first Design**: Optimized for all devices to ensure a smooth user experience.
+- **Personalized Job Management**: View and manage your applied jobs in one place.
+- **Job Bookmarking**: Save and view your favorite job listings for later.
+- **User Profile**: Access and manage your profile information effortlessly.
+
+## Tech Stack
+
+- **Frontend**: React, Vite, Tailwind CSS
+- **Backend**: Supabase PostgreSQL
+- **Authentication**: Clerk
+
+## Getting Started
 
 ### Prerequisites
-- Node.js ≥16.x  
-- npm ≥9.x  
-- Supabase account  
-- Clerk account  
 
----
+- Node.js (v14 or later)
+- npm (v6 or later)
+- Supabase account
+- Clerk account
 
-### 🔧 Installation
+### Installation
 
-1. **Clone repository**
+1. **Clone the repository**:
    ```bash
    git clone https://github.com/your-username/jobnest.git
    cd jobnest
+   ```
 
-
-2. **Install Dependencies**
+2. **Install dependencies**:
    ```bash
    npm install
+   ```
 
+3. **Set up environment variables**:
+   - Create a `.env` file in the root directory.
+   - Add your Supabase and Clerk credentials:
+     ```
+     VITE_SUPABASE_URL=your-supabase-url
+     VITE_SUPABASE_ANON_KEY=your-supabase-anon-key
+     VITE_CLERK_FRONTEND_API=your-clerk-frontend-api
+     ```
 
-3. **Configure environment Create a .env file and add your keys:**
-   ```bash
-    VITE_SUPABASE_URL=your-project-url  
-    VITE_SUPABASE_KEY=your-anon-key  
-    VITE_CLERK_PUBLISHABLE_KEY=your-clerk-key
-
-   
-4. **Start development server**
+4. **Run the development server**:
    ```bash
    npm run dev
+   ```
 
+5. **Access the application**:
+   Open your browser and navigate to `http://localhost:3000`.
 
-📂 Project Structure
+## Contributing
 
-jobnest/  
-├── public/          # Static assets  
-├── src/  
-│   ├── api/         # Supabase services  
-│   ├── components/  # Reusable UI components  
-│   ├── contexts/    # Application state  
-│   ├── pages/       # Route components  
-│   ├── styles/      # Tailwind configuration  
-│   └── utils/       # Helper functions  
-├── .env.example     # Environment template  
-└── vite.config.ts   # Build configuration  
+We welcome contributions from the community! If you'd like to contribute to JobNest, please follow these steps:
 
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and commit them with descriptive messages.
+4. Push your branch to your fork.
+5. Submit a pull request to the main repository.
 
+## Copyright
 
-📄 Documentation
+© 2025 Ankan Maity. All rights reserved.
 
-<a href="https://supabase.com/docs">Supabase</a>
+This software and its documentation are the intellectual property of Ankan Maity. Unauthorized reproduction, distribution, or modification, in whole or in part, without express written permission from the author is strictly prohibited.
 
-<a href="https://clerk.com/docs">Clerk</a>
+## Contact
 
+If you have any questions or suggestions, feel free to open an issue or contact [Ankan Maity](mailto:mr.ankanmaity@gmail.com).
 
-<p align="center"> 🔗 Connect with us: <a href="mailto:support@jobnest.com">Email</a> | <a href="https://twitter.com/jobnest">Twitter</a> | <a href="https://linkedin.com/company/jobnest">LinkedIn</a> </p>
-<sub>🕊️ JobNest - Where careers take flight</sub>
+---
