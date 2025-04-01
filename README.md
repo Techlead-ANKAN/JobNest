@@ -8,6 +8,12 @@
 
 JobNest is a modern hiring platform designed to streamline the job search and recruitment process. It offers a seamless experience for both job seekers and employers, leveraging cutting-edge technologies to provide real-time job listings, advanced search capabilities, and personalized job management.
 
+## Go Live
+
+[Go Live 🚀](https://job-nest-hazel.vercel.app/)
+
+
+
 ## Features
 
 - **Secure Authentication**: Enterprise-grade authentication powered by Clerk.
