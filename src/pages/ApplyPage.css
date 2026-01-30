@@ -3,6 +3,9 @@
   max-width: 1200px;
   margin: 2rem auto;
   padding: 2rem;
+  min-height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 /* Loading State */
@@ -132,6 +135,7 @@
   padding: 2rem;
   border-radius: 10px;
   background: #f8f9fa;
+  overflow: visible;
 }
 
 .ap-form-grid {
@@ -149,7 +153,10 @@
 
 .ap-form-group textarea{
   padding: 1rem;
-  width: 30rem;
+  width: 100%;
+  max-width: 100%;
+  min-height: 100px;
+  resize: vertical;
 }
 
 .ap-form-group label {
@@ -157,6 +164,25 @@
   margin-bottom: 0.5rem;
   color: #2d3436;
   font-weight: 500;
+}
+
+.ap-form-group input,
+.ap-form-group select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1.5px solid #e5e5e5;
+  border-radius: 8px;
+  font-size: 0.9375rem;
+  transition: all 0.2s ease;
+  background: white;
+}
+
+.ap-form-group input:focus,
+.ap-form-group select:focus,
+.ap-form-group textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
 .ap-file-upload {
@@ -223,6 +249,17 @@
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
   text-align: center;
   z-index: 1000;
+}
+
+.ap-success-modal::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: -1;
 }
 
 /* Responsive Design */

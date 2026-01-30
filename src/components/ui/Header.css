@@ -1,98 +1,81 @@
 /* Header Styles */
 .main-header {
-    background: white;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  }
+  background: white;
+  box-shadow: none;
+  border-bottom: 1px solid #f0f0f0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 72px;
+}
+
+.brand-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo-link {
+  transition: opacity 0.2s ease;
+}
+
+.logo-link:hover {
+  opacity: 0.8;
+}
+
+.header_logo {
+  height: 4.5rem;
+  width: auto;
+  object-fit: contain;
+}
   
-  .header-content {
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 80px;
-  }
-  
-  .brand-container {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-  }
-  
-  .logo-link {
-    transition: transform 0.3s ease;
-  }
-  
-  .logo-link:hover {
-    transform: scale(1.03);
-  }
-  
-  .header_logo {
-    height: 5rem;
-    width: auto;
-    object-fit: contain;
-  }
-  
-  .site-title {
-    margin: 0;
-    font-size: xx-large;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    color: #2d3436;
-  }
-  
-  .typing-animation {
-    display: inline-block;
-    overflow: hidden;
-    border-right: 2px solid #0984e3;
-    white-space: nowrap;
-    animation: 
-      typing 1.5s steps(15, end) forwards,
-      blink-caret 0.75s step-end infinite;
-    max-width: 0;
-  }
-  
-  @keyframes typing {
-    from { max-width: 0 }
-    to { max-width: 100% }
-  }
-  
-  @keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: #0984e3; }
-  }
-  
-  .auth-section {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-  }
-  
-  /* Sign In Button */
-  .sign-in-button {
-    background: #0984e3;
-    color: white;
-    border: none;
-    padding: 0.8rem 1.8rem;
-    border-radius: 25px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-family: 'Poppins', sans-serif;
-    box-shadow: 0 4px 15px rgba(9, 132, 227, 0.2);
-  }
-  
-  .sign-in-button:hover {
-    background: #0873c4;
-    box-shadow: 0 6px 20px rgba(9, 132, 227, 0.3);
-    transform: translateY(-1px);
-  }
-  
-  /* User Profile */
+.site-title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  color: #1a1a1a;
+  letter-spacing: -0.02em;
+}
+
+.typing-animation {
+  display: inline-block;
+}
+
+.auth-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Sign In Button */
+.sign-in-button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 0.625rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.9375rem;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: 'Inter', sans-serif;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.sign-in-button:hover {
+  background: #1d4ed8;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
+}  /* User Profile */
   .user-profile {
     height: 100px;
     display: flex;
@@ -226,16 +209,16 @@
 
 /* Trigger Button Container */
 .user-trigger {
-  width: 50px !important;
-  height: 50px !important;
-  border: 2px solid #0984e3 !important;
-  transition: all 0.3s ease;
+  width: 40px !important;
+  height: 40px !important;
+  border: 1.5px solid #e5e5e5 !important;
+  transition: all 0.2s ease;
 }
 
 /* Hover Effects */
 .user-trigger:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 15px rgba(9, 132, 227, 0.2);
+  border-color: #2563eb;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.12);
 }
 
 @media (max-width: 768px) {
