@@ -151,6 +151,19 @@ function ApplyPage() {
         }
       
         try {
+          // Check if the user has already applied for this job
+          const { data: existingApplication } = await supabase
+            .from('Applied_Jobs')
+            .select('*')
+            .eq('JobId', jobId)
+            .eq('UserId', user.id)
+            .single();
+      
+          if (existingApplication) {
+            setError('You have already applied for this job. Check your applications in My Jobs.');
+            return;
+          }
+      
           const { error } = await supabase.from('Applied_Jobs').insert({
             JobId: jobId,
             UserId: user.id

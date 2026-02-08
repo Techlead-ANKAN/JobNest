@@ -1,5 +1,4 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { Editor } from '@tinymce/tinymce-react';
 import './PostJobs.css';
 import _ from 'lodash';
 import { supabase } from '@/utils/supabase';
@@ -118,17 +117,11 @@ function PostJobs() {
 
 
   const handleSubmit = async (e) => {
+    e.preventDefault();
 
     const stateFormatted = _.startCase(state.toLowerCase());
     const countryFormatted = _.startCase(country.toLowerCase());
     const loc = `${stateFormatted}, ${countryFormatted}`;
-    
-    e.preventDefault();
-    
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(desc, 'text/html');
-    const textContent = doc.body.textContent;
-    setDesc(textContent); // store the text in the desc variable
     
     const {data, error} = await supabase
     .from("Posted_Jobs")
@@ -139,7 +132,7 @@ function PostJobs() {
         Role: role,
         JobType: employmentType,
         LocationType: workMode,
-        Description: textContent
+        Description: desc
       }
     ]);
     
@@ -149,11 +142,8 @@ function PostJobs() {
     }
     else{
       setShowSuccessPopup(true);
-      console.log(textContent); // logs the description without HTML tags
       console.log(jobData);
     }
-  
-  
     
     setCompanyName("");
     setRole("");
@@ -161,12 +151,7 @@ function PostJobs() {
     setCountry("");
     setEmploymentType("");
     setWorkMode("");
-    // setDesc(""); // do not reset desc here, it will be reset when the editor content is cleared
-  
-    
-    if (editorRef.current && editorRef.current.editor) {
-      editorRef.current.editor.setContent('');
-    }
+    setDesc("");
   };
 
   return (
@@ -265,28 +250,15 @@ function PostJobs() {
         </div>
 
         <div className="editor-container animate-fade-in">
-          <label>Job Description</label>
-          <Editor
-            ref={editorRef}
-            apiKey='zu44s9lz8czbeutnpmf1j1grlk9muzyiozvy90w7uz7m8ga2'
-            init={{
-              selector: "textarea",
-              placeholder: "Enter job description...",
-              plugins: [
-                'anchor', 'autolink', 'charmap', 'codesample', 'emoticons', 'image', 'link', 'lists', 'media', 'searchreplace', 'table', 'visualblocks', 'wordcount',
-                'checklist', 'mediaembed', 'casechange', 'export', 'formatpainter', 'pageembed', 'a11ychecker', 'tinymcespellchecker', 'permanentpen', 'powerpaste', 'advtable', 'advcode', 'editimage', 'advtemplate', 'ai', 'mentions', 'tinycomments', 'tableofcontents', 'footnotes', 'mergetags', 'autocorrect', 'typography', 'inlinecss', 'markdown', 'importword', 'exportword', 'exportpdf'
-              ],
-              toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
-              tinycomments_mode: 'embedded',
-              tinycomments_author: 'Author name',
-              mergetags_list: [
-                { value: 'First.Name', title: 'First Name' },
-                { value: 'Email', title: 'Email' },
-              ],
-              ai_request: (request, respondWith) => respondWith.string(() => Promise.reject('See docs to implement AI Assistant')),
-            }}
-            // initialValue="Enter job description..."
-            onEditorChange={(content) => setDesc(content)}
+          <label htmlFor="jobDescription">Job Description</label>
+          <textarea
+            id="jobDescription"
+            className="hover-effect"
+            placeholder="Enter job description..."
+            value={desc}
+            onChange={(e) => setDesc(e.target.value)}
+            rows="10"
+            required
           />
         </div>
 

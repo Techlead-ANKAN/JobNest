@@ -65,7 +65,8 @@
 }
 
 input,
-select {
+select,
+textarea {
     width: 100%;
     padding: 1rem 1.5rem;
     border: 2px solid #e9ecef;
@@ -77,8 +78,16 @@ select {
     font-weight: 700;
 }
 
+textarea {
+    font-family: 'Inter', sans-serif;
+    resize: vertical;
+    min-height: 250px;
+    line-height: 1.6;
+}
+
 input:focus,
-select:focus {
+select:focus,
+textarea:focus {
     outline: none;
     border-color: #0984e3;
     background: white;
@@ -95,6 +104,7 @@ select {
 
 .editor-container {
     margin: 3rem 0;
+    width: 100%;
 }
 
 .editor-container label {
@@ -102,6 +112,11 @@ select {
     margin-bottom: 1.5rem;
     font-weight: 600;
     color: #2d3436;
+}
+
+.editor-container textarea {
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .submit-button {
